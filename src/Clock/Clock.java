@@ -31,7 +31,7 @@ public class Clock extends javax.swing.JFrame {
                     int hour = cal.get(Calendar.HOUR);
                     int min = cal.get(Calendar.MINUTE);
                     int sec = cal.get(Calendar.SECOND);
-                    jLabel1.setText(hour + ":" + min + ":" + sec);
+                    jLabel1.setText(String.format("%02d:%02d:%02d", hour, min, sec));
                     try {
                         sleep(1000);
                     } catch (Exception e) {
