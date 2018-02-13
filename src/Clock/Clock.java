@@ -31,7 +31,13 @@ public class Clock extends javax.swing.JFrame {
                     int hour = cal.get(Calendar.HOUR);
                     int min = cal.get(Calendar.MINUTE);
                     int sec = cal.get(Calendar.SECOND);
-                    jLabel1.setText(String.format("%02d:%02d:%02d", hour, min, sec));
+                    String am_pm;
+                    if (cal.get(Calendar.AM_PM) == Calendar.AM) {
+                        am_pm = "am";
+                    } else {
+                        am_pm = "pm";
+                    }
+                    jLabel1.setText(String.format("%02d:%02d:%02d %s", hour, min, sec, am_pm));
                     try {
                         sleep(1000);
                     } catch (Exception e) {
@@ -68,16 +74,16 @@ public class Clock extends javax.swing.JFrame {
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
+                .addGap(35, 35, 35)
                 .addComponent(jLabel1)
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(242, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(37, 37, 37)
-                .addComponent(jLabel1)
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addGap(36, 36, 36)
+                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 72, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(36, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
